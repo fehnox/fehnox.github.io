@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fernando Brigida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">FB</div>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://github.com/fehnox" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/fernandobrigida" target="_blank">LinkedIn</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+  </nav>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">Sobre</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projetos</a>
+    <a href="#contact" class="mobile-link">Contato</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-text">
+      <div class="hero-tag">Disponível para estágio remoto</div>
+      <h1>Olá, eu sou<br /><span class="accent">Fernando Brigida</span></h1>
+      <p class="hero-desc">
+        Estudante de <strong>Engenharia de Telecomunicações na UFPA</strong>, técnico em TI com mais de 10 anos de experiência e apaixonado por <strong>automação com IA</strong>. Construo soluções reais — de bots a dashboards.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">Ver projetos</a>
+        <a href="#contact" class="btn btn-outline">Entrar em contato</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-circle">
+        
+          <img src="assets/minhafoto.jpg" alt="Fernando Brigida" class="avatar-img" />
+          </div>
+        <div class="avatar-note">// adicione sua foto aqui</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SOBRE ── -->
+  <section id="about">
+    <div class="section-label">01 — sobre mim</div>
+    <h2 class="section-title">Quem sou eu</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Sou <strong>Fernando Emanoel Miranda Santa Brigida</strong>, nascido em Belém do Pará. Comecei a trabalhar com tecnologia aos 13 anos consertando computadores, e desde então nunca parei de aprender.
+        </p>
+        <p>
+          Hoje curso <strong>Engenharia de Telecomunicações na UFPA</strong> e combino minha base técnica com projetos práticos de <strong>automação, IA e desenvolvimento</strong>. Acredito que a tecnologia deve resolver problemas reais — e é exatamente isso que busco em cada projeto que faço.
+        </p>
+        <p>
+          Fora da tecnologia, sou criador de conteúdo e estou construindo minha presença digital para compartilhar tudo que aprendo nessa jornada.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Anos como técnico em TI</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Certificações Cisco</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">UFPA</div>
+          <div class="stat-label">Eng. Telecomunicações</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Curiosidade por IA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="section-label">02 — habilidades</div>
+    <h2 class="section-title">O que eu sei fazer</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-name">Suporte Técnico</div>
+        <div class="skill-desc">Hardware, software, redes, diagnóstico remoto e presencial. 10+ anos de experiência prática.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-name">Automação com IA</div>
+        <div class="skill-desc">Criação de bots, agentes e automações usando Claude, ChatGPT, DeepSeek e integrações via API.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">Redes & Telecom</div>
+        <div class="skill-desc">Fundamentos TCP/IP, diagnóstico de conectividade. Certificações Cisco em Networking e IoT.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-desc">Web scraping, bots, automações, integração com APIs e deploy em VPS (Oracle Cloud).</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🐧</div>
+        <div class="skill-name">Linux & Cloud</div>
+        <div class="skill-desc">Terminal, tmux, deploy em VPS Ubuntu, GitHub Actions como CI/CD e gerenciamento remoto.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name">Front-end</div>
+        <div class="skill-desc">HTML, CSS, JavaScript e Git/GitHub. Construção de interfaces e versionamento de projetos.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── PROJETOS ── -->
+  <section id="projects">
+    <div class="section-label">03 — projetos</div>
+    <h2 class="section-title">O que eu construí</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🤖</div>
+          <a href="https://github.com/fehnox/boot-telegram-vendinhas-herosaga" target="_blank" class="project-link">→ GitHub</a>
+        </div>
+        <div class="project-title">Bot de Alertas de Vendas</div>
+        <div class="project-desc">
+          Sistema que monitora lojas em tempo real, detecta alterações no HTML e dispara alertas simultâneos via Telegram e Discord. Roda em VPS na Oracle Cloud com GitHub Actions como cron a cada 1 minuto.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Telegram API</span>
+          <span class="tag">Discord Webhook</span>
+          <span class="tag">Oracle Cloud</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">📊</div>
+          <a href="https://github.com/fehnox" target="_blank" class="project-link">→ GitHub</a>
+        </div>
+        <div class="project-title">Dashboard de Gestão de Lojas</div>
+        <div class="project-desc">
+          Painel completo para gerenciar múltiplas lojas: cadastro, controle de estoque, histórico de vendas e relatório de faturamento. Interface desktop via Electron integrada ao bot de alertas.
+        </div>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Electron</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JSON</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🌐</div>
+          <a href="https://fehnox.github.io" target="_blank" class="project-link">→ Ver site</a>
+        </div>
+        <div class="project-title">Portfólio Pessoal</div>
+        <div class="project-desc">
+          Este site. Desenvolvido do zero com HTML, CSS puro e JavaScript. Design dark mode responsivo hospedado gratuitamente no GitHub Pages.
+        </div>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub Pages</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── CONTATO ── -->
+  <section id="contact">
+    <div class="section-label">04 — contato</div>
+    <h2 class="section-title">Vamos conversar?</h2>
+    <div class="contact-inner">
+      <p>
+        Estou disponível para estágio remoto imediato em suporte técnico, TI ou automação com IA. Se quiser trocar uma ideia, colaborar em algum projeto ou só bater um papo sobre tecnologia — me chama!
+      </p>
+      <div class="contact-links">
+        <a href="mailto:fernando.fehnox@gmail.com" class="contact-link">
+          <span class="icon">✉</span> fernando.fehnox@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/fernandobrigida" target="_blank" class="contact-link">
+          <span class="icon">💼</span> LinkedIn
+        </a>
+        <a href="https://github.com/fehnox" target="_blank" class="contact-link">
+          <span class="icon">🐙</span> GitHub
+        </a>
+        <a href="https://wa.me/5591980102718" target="_blank" class="contact-link">
+          <span class="icon">💬</span> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2026 <span class="accent">Fernando Brigida</span> — Belém, PA</p>
+    <p>Feito com <span class="accent">♥</span> e muito café ☕</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
