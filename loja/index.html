@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio 7 Dias Sem Vácuo — Para de perder clientes no WhatsApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:      #25d366;
+      --verde-dark: #128c50;
+      --verde-bg:   #f0fdf6;
+      --text:       #111827;
+      --text-soft:  #6b7280;
+      --border:     #e5e7eb;
+      --bg:         #ffffff;
+      --bg2:        #f9fafb;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: #0a0a0a;
+      color: white;
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--verde);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 em {
+      color: var(--verde);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #9ca3af;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--verde);
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hero-cta:hover { background: #20c45a; transform: translateY(-2px); }
+
+    .hero-price {
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: #6b7280;
+    }
+    .hero-price strong { color: var(--verde); font-size: 1.1rem; }
+
+    /* ── DOR ── */
+    .dor {
+      background: var(--bg2);
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .dor h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    .dor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .dor-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: left;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-soft);
+    }
+
+    .dor-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .dor-emoji { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+
+    /* ── O QUE É ── */
+    .sobre {
+      padding: 72px 24px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .sobre h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .sobre p {
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    /* ── DIAS ── */
+    .dias {
+      background: var(--bg2);
+      padding: 72px 24px;
+    }
+
+    .dias-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .dias h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .dias-sub {
+      text-align: center;
+      color: var(--text-soft);
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    .dia-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .dia-item:last-child { border-bottom: none; }
+
+    .dia-num {
+      background: var(--verde);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.8rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .dia-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .dia-info p {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* ── PARA QUEM ── */
+    .para-quem {
+      padding: 72px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .para-quem h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      background: var(--verde-bg);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .check-icon {
+      color: var(--verde-dark);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── PREÇO ── */
+    .preco {
+      background: #0a0a0a;
+      color: white;
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .preco h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .preco-sub {
+      color: #9ca3af;
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    .preco-box {
+      background: #1a1a1a;
+      border: 1px solid #2d2d2d;
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .preco-nome {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+
+    .preco-valor {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--verde);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .preco-valor span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      vertical-align: super;
+    }
+
+    .preco-desc {
+      color: #6b7280;
+      font-size: 0.82rem;
+      margin-bottom: 28px;
+    }
+
+    .preco-lista {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .preco-lista li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      color: #d1d5db;
+      border-bottom: 1px solid #2d2d2d;
+    }
+    .preco-lista li:last-child { border-bottom: none; }
+    .preco-lista li::before { content: '✓'; color: var(--verde); font-weight: 700; }
+
+    .btn-comprar {
+      display: block;
+      width: 100%;
+      background: var(--verde);
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      text-align: center;
+    }
+    .btn-comprar:hover { background: #20c45a; transform: translateY(-2px); }
+
+    .preco-garantia {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 72px 24px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .faq h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    footer a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--text); }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 600px) {
+      .hero { padding: 56px 20px 48px; }
+      .preco-valor { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">Guia Digital · PDF</div>
+    <h1>Para de perder clientes<br/>no <em>WhatsApp</em></h1>
+    <p class="hero-sub">
+      7 dias. 7 missões práticas. Scripts prontos para você responder melhor, fechar mais e nunca mais ficar no vácuo.
+    </p>
+    <a href="#comprar" class="hero-cta">Quero parar de perder clientes →</a>
+    <p class="hero-price">por apenas <strong>R$ 27</strong> · acesso imediato por email</p>
+  </section>
+
+  <!-- DOR -->
+  <section class="dor">
+    <h2>Você já passou por isso?</h2>
+    <div class="dor-grid">
+      <div class="dor-item">
+        <span class="dor-emoji">😶</span>
+        <strong>Cliente pergunta o preço e some</strong>
+        Você responde, aguarda, e não recebe mais retorno. A venda estava quase fechada.
+      </div>
+      <div class="dor-item">
+        <span class="dor-emoji">⏱️</span>
+        <strong>Demora pra responder e perde pro concorrente</strong>
+        Cada hora sem resposta é uma chance a mais do cliente ir buscar em outro lugar.
+      </div>
+      <div class="dor-item">
+        <span class="dor-emoji">🤷</span>
+        <strong>Não sabe o que dizer quando ouve "tá caro"</strong>
+        Fica sem resposta e deixa o cliente ir embora sem nem tentar virar o jogo.
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre">
+    <h2>O que é o Desafio 7 Dias Sem Vácuo</h2>
+    <p>
+      É um guia prático em PDF criado para donos de negócios locais que atendem pelo WhatsApp e estão cansados de perder vendas por não saber o que responder.
+    </p>
+    <p>
+      Um passo por dia, com missões reais para aplicar na sua rotina. Ao final dos 7 dias, você terá scripts prontos, saberá como abrir uma conversa, responder objeções e nunca mais deixar um cliente sem resposta.
+    </p>
+  </section>
+
+  <!-- DIAS -->
+  <section class="dias">
+    <div class="dias-inner">
+      <h2>O que você aprende nos 7 dias</h2>
+      <p class="dias-sub">Cada dia tem uma missão prática para aplicar no mesmo dia</p>
+
+      <div class="dia-item">
+        <div class="dia-num">1</div>
+        <div class="dia-info">
+          <h3>Por que seus clientes somem depois do preço</h3>
+          <p>Identifica os 3 erros mais comuns no atendimento pelo WhatsApp e como corrigir hoje.</p>
+        </div>
+      </div>
+
+      <div class="dia-item">
+        <div class="dia-num">2</div>
+        <div class="dia-info">
+          <h3>Os primeiros 5 minutos que decidem a venda</h3>
+          <p>Scripts de saudação prontos para usar na próxima conversa nova que chegar.</p>
+        </div>
+      </div>
+
+      <div class="dia-item">
+        <div class="dia-num">3</div>
+        <div class="dia-info">
+          <h3>Como virar o jogo do "achei caro"</h3>
+          <p>3 respostas estratégicas para quando o cliente reclama do preço sem encerrar a conversa.</p>
+        </div>
+      </div>
+
+      <div class="dia-item">
+        <div class="dia-num">4</div>
+        <div class="dia-info">
+          <h3>Blindagem contra o "vou pensar"</h3>
+          <p>Scripts para objeções e aceleradores de fechamento sem parecer desesperado.</p>
+        </div>
+      </div>
+
+      <div class="dia-item">
+        <div class="dia-num">5</div>
+        <div class="dia-info">
+          <h3>Cadência de follow-up que traz clientes de volta</h3>
+          <p>A regra das 24h, das 72h e a despedida estratégica — que tem alta taxa de resposta.</p>
+        </div>
+      </div>
+
+      <div class="dia-item">
+        <div class="dia-num">6</div>
+        <div class="dia-info">
+          <h3>Scripts por tipo de negócio</h3>
+          <p>Adaptações para loja, prestador de serviço e clínica — aplique direto na sua realidade.</p>
+        </div>
+      </div>
+
+      <div class="dia-item">
+        <div class="dia-num">7</div>
+        <div class="dia-info">
+          <h3>Automatize sem perder o lado humano</h3>
+          <p>Como usar atalhos do WhatsApp Business e organizar seus contatos com etiquetas.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="para-quem">
+    <h2>Para quem é esse guia</h2>
+    <div class="checks">
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>Dono de loja, salão, clínica ou prestador de serviço</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>Quem atende pelo WhatsApp e perde clientes sem saber por quê</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>Quem não tem tempo e precisa de scripts prontos para usar já</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>Quem ouve "tá caro" ou "vou pensar" e não sabe o que responder</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>Quem quer vender mais sem precisar contratar ninguém</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>Quem demora mais de 1h para responder clientes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇO -->
+  <section class="preco" id="comprar">
+    <h2>Acesso imediato</h2>
+    <p class="preco-sub">Você recebe o PDF no seu email logo após a compra</p>
+
+    <div class="preco-box">
+      <p class="preco-nome">Desafio 7 Dias Sem Vácuo</p>
+      <p class="preco-valor"><span>R$</span> 27</p>
+      <p class="preco-desc">pagamento único · sem mensalidade</p>
+
+      <ul class="preco-lista">
+        <li>PDF completo com 7 dias de missões</li>
+        <li>Scripts prontos para copiar e usar</li>
+        <li>Checklist de bolso para consultar sempre</li>
+        <li>Adaptações por tipo de negócio</li>
+        <li>Entrega imediata no seu email</li>
+      </ul>
+
+      <!-- Troque o href pelo link do seu produto no Shopify -->
+      <a href="https://seusite.myshopify.com/products/desafio-7-dias" class="btn-comprar">
+        Comprar agora por R$ 27
+      </a>
+      <p class="preco-garantia">🔒 Pagamento seguro · Você recebe o PDF por email após a confirmação</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Dúvidas frequentes</h2>
+
+    <div class="faq-item">
+      <h3>Como recebo o material?</h3>
+      <p>Após a confirmação do pagamento, você recebe o PDF direto no email que cadastrou na compra. Verifique também a caixa de spam.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Funciona para qualquer tipo de negócio?</h3>
+      <p>Sim. O guia tem adaptações específicas para loja/produto, prestador de serviço e clínica/agenda. Você aplica o que faz sentido para a sua realidade.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Preciso ter WhatsApp Business?</h3>
+      <p>Não é obrigatório. Os scripts funcionam no WhatsApp comum. O Business é indicado no Dia 7 para quem quiser dar um passo a mais na organização.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Em quanto tempo vejo resultado?</h3>
+      <p>As missões são para aplicar no mesmo dia em que você lê. Muitos resultados aparecem já na primeira semana — depende de você usar os scripts nas conversas reais.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Posso parcelar?</h3>
+      <p>O valor de R$ 27 é pago de uma vez. As opções de pagamento disponíveis aparecem na página de checkout.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 · Desafio 7 Dias Sem Vácuo</p>
+    <p style="margin-top:8px;">
+      <a href="#">Política de privacidade</a> · 
+      <a href="#">Termos de uso</a> · 
+      <a href="mailto:fernando.fehnox@gmail.com">Suporte</a>
+    </p>
+  </footer>
+
+</body>
+</html>
