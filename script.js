@@ -62,7 +62,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 // Adiciona a classe de animação nos cards
-document.querySelectorAll('.skill-card, .project-card, .stat-card, .contact-link').forEach(el => {
+document.querySelectorAll('.skill-card, .skill-group, .stack-flow, .project-card, .stat-card, .contact-link').forEach(el => {
   el.classList.add('fade-in');
   observer.observe(el);
 });

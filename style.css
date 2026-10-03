@@ -429,6 +429,100 @@ body {
 .skill-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; }
 .skill-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
+.sub-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 4rem 0 1.5rem;
+}
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-group {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  transition: border-color 0.2s;
+}
+.skill-group:hover { border-color: var(--accent); }
+
+.skill-group-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ── STACK EM EVOLUÇÃO ── */
+.stack-flow {
+  margin-top: 4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.stack-flow::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(var(--accent), var(--accent2));
+}
+
+.stack-flow-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.flow-steps {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.flow-step:not(:last-child)::after {
+  content: '→';
+  color: var(--accent2);
+  font-family: var(--font-mono);
+}
+.flow-step:last-child { color: var(--accent); }
+
 /* ── PROJETOS ── */
 #projects {
   background: var(--surface);
@@ -497,6 +591,49 @@ body {
   flex-wrap: wrap;
   margin-top: auto;
 }
+
+/* Projeto em destaque (ocupa a linha inteira) */
+.project-featured {
+  grid-column: 1 / -1;
+  border-color: rgba(0, 200, 255, 0.35);
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: -0.6rem;
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.project-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.project-highlights li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+.project-highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+}
+.project-highlights strong { color: var(--text); font-weight: 500; }
 
 .tag {
   font-family: var(--font-mono);
@@ -570,6 +707,7 @@ footer p {
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; }
   #hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; }
+  .project-body { grid-template-columns: 1fr; gap: 1.2rem; }
 }
 
 @media (max-width: 768px) {
@@ -590,6 +728,11 @@ footer p {
   .hero-btns { justify-content: center; }
 
   #about, #skills, #projects, #contact { padding: 4rem 1.5rem; }
+
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card { padding: 1.5rem; }
+  .stack-flow { padding: 1.5rem; }
+  .flow-step { font-size: 0.88rem; }
 
   footer {
     padding: 1.5rem;
